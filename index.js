@@ -43,3 +43,4 @@ for (const file of eventFiles) {
 }
 
 client.login(process.env.BOT_TOKEN);
+client.on("error", (error) => console.error("Discord client error:", error));

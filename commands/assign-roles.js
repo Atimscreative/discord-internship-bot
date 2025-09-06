@@ -29,11 +29,21 @@ export async function execute(interaction) {
   const stack = interaction.options.getString("stack");
   const { member, guild } = interaction;
 
+  //  Restrict to #choose-your-role
+  if (channel.id !== process.env.ROLE_CHANNEL_ID) {
+    return interaction.reply({
+      content:
+        "⚠️ You can only use `/assign-role` in the #choose-your-role  channel.",
+      ephemeral: true,
+    });
+  }
+
   try {
     // 🔒 Check if user already has any of the stack roles
     const hasStackRole = stacks.some((s) =>
       member.roles.cache.some((r) => r.name === s)
     );
+
     if (hasStackRole) {
       return interaction.reply({
         content: "❌ You already have a stack assigned. You can't change it.",
