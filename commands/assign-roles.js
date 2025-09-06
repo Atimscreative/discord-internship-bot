@@ -1,14 +1,17 @@
 import { SlashCommandBuilder, PermissionFlagsBits } from "discord.js";
 
 const stacks = [
-  "front-end",
-  "back-end",
-  "product-designer",
-  "graphics-design",
-  "social-media-manager-and-content-creator-channel",
-  "data-analysis",
-  "qa-engineers",
-  "product-manager",
+  { name: "Front End", value: "front-end" },
+  { name: "Back End", value: "back-end" },
+  { name: "Product Designer", value: "product-designer" },
+  { name: "Graphic Design", value: "graphic-design" },
+  {
+    name: "Social Media Manager And Content Creator",
+    value: "social-media-manager-and-content-creator-channel",
+  },
+  { name: "Data Analysis", value: "data-analysis" },
+  { name: "Qa Engineers", value: "qa-engineers" },
+  { name: "Product Manager", value: "product-manager" },
 ];
 
 export const data = new SlashCommandBuilder()
@@ -19,7 +22,7 @@ export const data = new SlashCommandBuilder()
       .setName("stack")
       .setDescription("Choose your track.")
       .setRequired(true)
-      .addChoices(...stacks.map((s) => ({ name: s, value: s })))
+      .addChoices(...stacks.map((s) => ({ name: s.name, value: s.value })))
   );
 
 export async function execute(interaction) {
