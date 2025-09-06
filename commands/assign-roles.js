@@ -1,14 +1,14 @@
 import { SlashCommandBuilder, PermissionFlagsBits } from "discord.js";
 
 const stacks = [
-  "frontend",
-  "backend",
+  "front-end",
+  "back-end",
   "product-designer",
-  "graphics",
-  "social-media-manager",
-  "data-analyst",
-  "qa-tester",
-  "project-manager",
+  "graphics-design",
+  "social-media-manager-and-content-creator-channel",
+  "data-analysis",
+  "qa-engineers",
+  "product-manager",
 ];
 
 export const data = new SlashCommandBuilder()
