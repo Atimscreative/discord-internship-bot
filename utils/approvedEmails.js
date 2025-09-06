@@ -2,6 +2,8 @@ export const approvedEmails = [
   //
   "akanimoekong@gmail.com",
   "widorenyin0@gmail.com",
+  "fatolu.stephen@gmail.com",
+  "",
 
   // DA(s)
   "adiaharaymond3001@gmail.com",
