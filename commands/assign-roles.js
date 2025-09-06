@@ -27,7 +27,7 @@ export const data = new SlashCommandBuilder()
 
 export async function execute(interaction) {
   const stack = interaction.options.getString("stack");
-  const { member, guild } = interaction;
+  const { member, guild, channel } = interaction;
 
   //  Restrict to #choose-your-role
   if (channel.id !== process.env.ROLE_CHANNEL_ID) {
